@@ -13,7 +13,7 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 | 1 | [CLAUDE.md Architecture](ep1-claude-md-architecture/README.md) | `ep1-claude-md-architecture` | ✅ Published |
 | 2 | [Hooks: Turning Text Rules into Enforced Behavior](ep2-hooks/README.md) | `ep2-hooks` | ✅ Published |
 | 3 | [MCP Servers: Build One, Wire It In, Make It Reliable](ep3-mcp-server/README.md) | `ep3-mcp-server` | ✅ Published |
-| 4 | Context Management: Token Budgets, Compaction, Sessions That Don't Forget | `ep4-context-management` | coming |
+| 4 | [Context Management: Token Budgets, Compaction, Sessions That Don't Forget](ep4-context-management/README.md) | `ep4-context-management` | ✅ Published |
 
 ---
 
@@ -77,11 +77,22 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 
 ---
 
-## Episode 4 — Context Management *(coming)*
+## Episode 4 — Context Management: Token Budgets, Compaction, and Sessions That Don't Forget
 
 **Branch:** `ep4-context-management`
 
-Two reusable templates: `task_state.md` and `session_handoff.md`. Survive compaction by design.
+> "Every session has a finite context. Here is how to design around it."
+
+| Deliverable | What it is |
+|---|---|
+| `patterns/task_state.md.template` | Intra-session running state — current task, done, next step, open questions |
+| `patterns/session_handoff.md.template` | Deliberate end-of-session summary for the next session |
+| `examples/long_session_CLAUDE.md` | Token-optimised CLAUDE.md (FastAPI project — structural + reference only) |
+| `examples/state_save_hook.sh` | `Notification:PreCompact` hook — appends compaction marker to `task_state.md` |
+| `examples/settings.json.example` | Hook wiring for `.claude/settings.json` |
+| `context_budget.py` | Session token budget simulator — estimates compaction trigger, trim savings |
+
+[→ Episode 4 README](ep4-context-management/README.md)
 
 ---
 

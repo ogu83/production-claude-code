@@ -1,0 +1,66 @@
+# Session Handoff — {{DATE}}
+
+<!-- HOW TO USE THIS FILE
+     Write this at the end of a session you are deliberately closing.
+     Start the next session with:
+       "Read session_handoff.md and pick up from Next Session Start Instructions."
+     
+     Difference from task_state.md:
+       task_state.md  = live intra-session state, updated after every step
+       session_handoff.md = deliberate end-of-session summary for the next session
+
+     Keep each section honest. Include known regressions and deferred decisions —
+     the next session will have to deal with them anyway.
+-->
+
+## Task Completed
+<!-- One paragraph describing what was actually built, not what was planned. -->
+<!-- Example:
+Implemented cursor-based pagination for GET /users. UserRepository.list() now accepts
+cursor (user ID) and limit parameters. Route handler reads ?cursor=<id>&limit=<n>
+query params and returns a PaginatedResponse with a next_cursor field. All existing
+tests pass and 6 new pagination tests were added.
+-->
+[Replace with a one-paragraph summary of what was actually built]
+
+## Files Changed
+<!-- Every file touched this session. One line per file: filename → what changed. -->
+<!-- Example:
+- schemas.py → added PaginatedResponse, UserCursor schemas
+- repositories/user_repository.py → list() method rewritten with cursor + limit
+- routes/users.py → route handler updated to read cursor + limit query params
+- tests/test_user_repository.py → 6 new pagination tests, all passing
+-->
+(none)
+
+## Current State
+<!-- Snapshot: what works, what does not, what is known. Include known regressions. -->
+<!-- Example:
+All existing tests pass. Pagination tests pass.
+GET /users?cursor=&limit=20 returns first page correctly.
+Known issue: limit is not capped server-side (discussed, deferred — see Open Decisions).
+-->
+[Replace with a snapshot of current state]
+
+## Deferred / Abandoned
+<!-- The most important section. Decisions made by not making them. -->
+<!-- Write this explicitly — it is what is most likely to be lost. -->
+<!-- Example:
+- Server-side limit cap: discussed, deferred pending client confirmation on acceptable max
+- Offset-based fallback: out of scope for this iteration, not started
+- Error message format for invalid cursor: using 400 Bad Request for now, may revisit
+-->
+(nothing deferred)
+
+## Next Session Start Instructions
+<!-- 3–5 numbered steps. Enough to orient. Not a full spec. -->
+<!-- First instruction is always: read this file. -->
+<!-- Example:
+1. Read this file
+2. Confirm all tests still pass: pytest tests/ -q
+3. Add integration test for cursor overflow (cursor value > max user ID)
+4. Write API documentation for the pagination parameters in docs/api.md
+5. Ask client to confirm: should limit be capped server-side? If yes, what value?
+-->
+1. Read this file
+2. [Replace with next concrete step]

@@ -1,0 +1,10 @@
+{
+  "hooks": [
+    {
+      "event": "Notification",
+      "matcher": "PreCompact",
+      "command": "/ABSOLUTE/PATH/TO/ep4-context-management/examples/state_save_hook.sh",
+      "timeout": 10
+    }
+  ]
+}

@@ -13,3 +13,7 @@ dist/
 # ep3 — generated assets (not committed)
 ep3-mcp-server/data/sample.db
 ep3-mcp-server/tool_debug.log
+
+# ep4 — generated runtime state (not committed)
+ep4-context-management/.claude/compaction_log.txt
+ep4-context-management/.claude/

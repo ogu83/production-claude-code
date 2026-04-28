@@ -1,0 +1,40 @@
+# Task State
+
+<!-- MAINTENANCE INSTRUCTIONS (remove this block after first use)
+     Update this file after every significant step:
+       - Modified a file?       → add a Done entry
+       - Made a decision?       → update Open Questions or resolve it
+       - Finished a step?       → update Next Step to the next concrete action
+     This file is read by:
+       - state_save_hook.sh     → timestamps it before each compaction
+       - Your session start     → paste the path to orient a new session
+     Keep it short. One line per Done entry. Two sentences max for Current Task.
+-->
+
+## Current Task
+<!-- One or two sentences. What is being built right now and why. -->
+<!-- Example: Add cursor-based pagination to GET /users. Return pages of 20 using user ID as cursor. -->
+[Replace this line with a 1-2 sentence description of the current task]
+
+## Done
+<!-- Chronological checklist. One line per step: what, which file, outcome. -->
+<!-- Example:
+- [x] Reviewed existing /users route in routes/users.py — currently returns all rows, no limit
+- [x] Added PaginatedResponse schema in schemas.py
+- [x] Updated UserRepository.list() to accept cursor + limit parameters
+- [x] Added pytest tests for UserRepository.list() — 6 tests, all passing
+-->
+- [ ] (nothing done yet — add entries as you complete steps)
+
+## Next Step
+<!-- ONE action. The next concrete thing to do. A new session reads this line first. -->
+<!-- Example: Update the route handler in routes/users.py to read ?cursor=<id>&limit=<n> query params -->
+[Replace this line with the single next action]
+
+## Open Questions
+<!-- Deferred decisions and noticed-but-not-yet-resolved issues. -->
+<!-- Example:
+- Should limit be capped server-side? Discussed — defer pending client confirmation.
+- Confirm with client: is cursor opaque to the API caller?
+-->
+(none yet)

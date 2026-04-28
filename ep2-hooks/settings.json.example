@@ -1,0 +1,28 @@
+{
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "matcher": "Bash",
+      "command": "/ABSOLUTE/PATH/TO/ep2-hooks/guards/destructive_command_guard.sh",
+      "timeout": 10
+    },
+    {
+      "event": "PreToolUse",
+      "matcher": "execute_sql",
+      "command": "/ABSOLUTE/PATH/TO/ep2-hooks/guards/select_guard.py",
+      "timeout": 10
+    },
+    {
+      "event": "Notification",
+      "matcher": "PreCompact",
+      "command": "/ABSOLUTE/PATH/TO/ep2-hooks/state/compaction_save.sh",
+      "timeout": 10
+    },
+    {
+      "event": "PostToolUse",
+      "matcher": "Bash",
+      "command": "/ABSOLUTE/PATH/TO/ep2-hooks/gates/test_gate.sh",
+      "timeout": 60
+    }
+  ]
+}

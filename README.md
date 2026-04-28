@@ -11,7 +11,7 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 | Episode | Topic | Branch | Status |
 |---|---|---|---|
 | 1 | [CLAUDE.md Architecture](ep1-claude-md-architecture/README.md) | `ep1-claude-md-architecture` | ✅ Published |
-| 2 | Hooks: Turning Text Rules into Enforced Behavior | `ep2-hooks` | coming |
+| 2 | [Hooks: Turning Text Rules into Enforced Behavior](ep2-hooks/README.md) | `ep2-hooks` | ✅ Published |
 | 3 | MCP Servers: Build One, Wire It In, Make It Reliable | `ep3-mcp-server` | coming |
 | 4 | Context Management: Token Budgets, Compaction, Sessions That Don't Forget | `ep4-context-management` | coming |
 
@@ -37,11 +37,24 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 
 ---
 
-## Episode 2 — Hooks *(coming)*
+## Episode 2 — Hooks: Turning Text Rules into Enforced Behavior
 
 **Branch:** `ep2-hooks`
 
-Three working hooks: destructive command guard, compaction state save/restore, test gate before commit.
+> "Text rules get ignored. Hooks do not get ignored. Here is how to move the things that actually matter out of prose and into code that runs every time."
+
+| Deliverable | What it is |
+|---|---|
+| `guards/destructive_command_guard.sh` | PreToolUse: blocks `rm -rf`, `DROP TABLE`, `git push --force`, and more |
+| `guards/select_guard.py` | PreToolUse: blocks any non-SELECT SQL query |
+| `state/compaction_save.sh` | Notification:PreCompact: timestamps `task_state.md` before compaction |
+| `state/compaction_restore.sh` | Standalone: prints `task_state.md` at session start |
+| `state/task_state.md.template` | Template for Claude to maintain task state mid-session |
+| `gates/test_gate.sh` | PostToolUse: runs pytest after `git commit`, stops agent on failure |
+| `debug/hook_debug.sh` | Debug utility: logs all hook inputs to `/tmp/hook_debug.log` |
+| `settings.json.example` | How to wire all hooks into `.claude/settings.json` |
+
+[→ Episode 2 README](ep2-hooks/README.md)
 
 ---
 

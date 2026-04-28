@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sqlite-tools": {
+      "command": "python",
+      "args": ["server.py"],
+      "cwd": "/ABSOLUTE/PATH/TO/ep3-mcp-server",
+      "env": {
+        "DB_PATH": "/ABSOLUTE/PATH/TO/ep3-mcp-server/data/sample.db"
+      }
+    }
+  }
+}

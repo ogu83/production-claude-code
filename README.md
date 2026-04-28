@@ -12,7 +12,7 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 |---|---|---|---|
 | 1 | [CLAUDE.md Architecture](ep1-claude-md-architecture/README.md) | `ep1-claude-md-architecture` | ✅ Published |
 | 2 | [Hooks: Turning Text Rules into Enforced Behavior](ep2-hooks/README.md) | `ep2-hooks` | ✅ Published |
-| 3 | MCP Servers: Build One, Wire It In, Make It Reliable | `ep3-mcp-server` | coming |
+| 3 | [MCP Servers: Build One, Wire It In, Make It Reliable](ep3-mcp-server/README.md) | `ep3-mcp-server` | ✅ Published |
 | 4 | Context Management: Token Budgets, Compaction, Sessions That Don't Forget | `ep4-context-management` | coming |
 
 ---
@@ -58,11 +58,22 @@ This repo contains the working files for each episode: CLAUDE.md templates, hook
 
 ---
 
-## Episode 3 — MCP Servers *(coming)*
+## Episode 3 — MCP Servers: Build One, Wire It In, Make It Reliable
 
 **Branch:** `ep3-mcp-server`
 
-Minimal Python MCP server with a SQLite query tool and a file-read tool, wired into Claude Code.
+> "An MCP server is how you give Claude Code a hand. Instead of copy-pasting context into the chat every session, you write a tool — and Claude calls it when it needs it."
+
+| Deliverable | What it is |
+|---|---|
+| `server.py` | FastMCP entry point — two tools, env-configured DB path, debug logging |
+| `create_db.py` | Bootstrap: creates `data/sample.db` (17 products, 30 orders) |
+| `tools/query_tool.py` | `query_db`: SELECT-only enforcement via prefix check + `sqlite3 mode=ro` |
+| `tools/read_file_tool.py` | `read_file`: path bounding via `pathlib.resolve()` + `is_relative_to()` |
+| `.claude.json.example` | `mcpServers` wiring block for `.claude.json` |
+| `test_server.py` | 20 tests covering both tools — no API key or MCP session needed |
+
+[→ Episode 3 README](ep3-mcp-server/README.md)
 
 ---
 

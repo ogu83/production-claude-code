@@ -9,3 +9,7 @@ dist/
 *.egg-info/
 .gstack/
 *.session
+
+# ep3 — generated assets (not committed)
+ep3-mcp-server/data/sample.db
+ep3-mcp-server/tool_debug.log
